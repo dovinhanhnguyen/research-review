@@ -26,12 +26,36 @@ In this section
 \section{History}
 	Pauli first proposed the existence of neutrinos ("neutrons") in 1930 \cite{pauliletter1930} when he was looking at the problem of radioactive $\beta$-decay, in which the emitted electrons had a continuous spectrum of energies leading to contradiction with the principle of energy conservation. Pauli suggested that there must be another unseen particle, of spin $1/2$ and mass of the same order of magnitude as the electron mass, emitted along with the electron in order for energy to be conserved.
     
-    In 1934, Fermi used Pauli's idea as the basis of his famous theory of $\beta$-decay and generally theory of weak interaction \cite{fermi1934}, coining the name "neutrino" ("little neutral one") in the process. Fermi was then able to calculate the probability of neutrino detection, which came out to be so small that it prompted Bethe and Peierls to claim that neutrinos might never be observed \cite{bethepeierls1934}. However, in 1956 Cowan and Reines succeeded in doing just that \cite{cowanreines1956} by their discovery of the antineutrinos in nuclear reactor using the reaction
+    In 1934, Fermi used Pauli idea as the basis of his famous theory of $\beta$-decay and generally theory of weak interaction \cite{fermi1934}, coining the name "neutrino" ("little neutral one") in the process. Fermi was then able to calculate the probability of neutrino detection, which came out to be so small that it prompted Bethe and Peierls to claim that neutrinos might never be observed \cite{bethepeierls1934}. However, in 1956 Cowan and Reines succeeded in doing just that \cite{cowanreines1956} by their discovery of the antineutrinos in nuclear reactor using the reaction
     \begin{gather}
     	\bar{\nu}+p \rightarrow n+e^{+}
     \end{gather}
     
-    After parity was found to not be conserved in the $\beta$-decay and other weak processest
+    After parity was found not to be conserved in the $\beta$-decay and other weak processes \cite{wu1957} by Wu \textit{et al.} in 1957, Salam \cite{salam1956}, Landau \cite{landau1957}, Lee and Yang \cite{leeyang1957} put forward the theory of the two-component neutrino using Weyl previously rejected idea of two-component spinors \cite{weyl1929}. Consider the Dirac equation for the neutrino field with mass $m_{\nu}$
+    \begin{gather}
+    	i\gamma^{\alpha} \partial_{\alpha} \nu (x) - m_{\nu} \nu (x) = 0
+    \end{gather}
+    
+    For left-handed and right-handed components, $\nu_{L} (x)$ and  $\nu_{R} (x)$, we obtain two coupled equations
+    \begin{gather}
+    	i\gamma^{\alpha} \partial_{\alpha} \nu_{L} (x) - m_{\nu} \nu_{R} (x) = 0 \\
+        i\gamma^{\alpha} \partial_{\alpha} \nu_{R} (x) - m_{\nu} \nu_{L} (x) = 0
+    \end{gather}
+    
+    Salam, Landau, Lee and Yang chose to assume that neutrino mass is zero, which is a reasonable assumption given the data existed at the time. If this is the case, we have two decoupled Weyl equations
+    \begin{gather}
+    	i\gamma^{\alpha} \partial_{\alpha} \nu_{L,R} (x) = 0
+    \end{gather}
+    and then the neutrino field can either be $\nu_{L} (x)$ or $\nu_{R} (x)$.
+    
+    The two-component theory implies the parity violation in $\beta$-decay and other weak processes (in agreement with the experimental results of the Wu \textit{et al.} and other experiments \cite{wu1957} \cite{garwinledermanweinrich1957}), and neutrino (antineutrino) helicity is equal to $-1$ ($+1$) if the field is $\nu_{L} (x)$ and is equal to $+1$ ($-1$) if the field is $\nu_{R} (x)$.
+    
+    In 1958, the helicity of neutrinos was measured from the chain reaction
+    \begin{gather}
+    	e^{-} + {}^{152} Eu \rightarrow {}^{152} Sm^{*} + \nu_{e} \\
+        {}^{152} Sm^{*} \rightarrow {}^{152} Sm + \gamma
+    \end{gather}
+    by Goldhaber \textit{et al.} \cite{goldhabergrodzinssunyar1958}. The neutrino helicity was negative in full agreement with the two-component theory of massless neutrino, and it looks like from the two possibilities, $\nu_{L} (x)$ or $\nu_{R} (x)$, nature pick the first one.
 
 \section{Background}
 
@@ -40,13 +64,27 @@ In this section
 \begin{thebibliography}{1}
 
 	\bibitem{pauliletter1930}
-    Pauli W., 1930. "Open letter to the group of radioactive people at the Gauverein meeting in T\"{u}bingen". Pauli Archive at CERN.
+    Pauli W., 1930. "Open letter to the group of radioactive people at the Gauverein meeting in T\"{u}bingen". \textit{Pauli Archive at CERN}.
     \bibitem{fermi1934}
     Fermi E., 1934. "Tentativo Di Una Teoria Dei Raggi $\beta$". \textit{Nuovo Cim.}, 11, 1.
     \bibitem{bethepeierls1934}
     Bethe H., Peierls R., 1934. \textit{Nature}, 133, 532.
     \bibitem{cowanreines1956}
-    Cowan C. L. textit{et al.}, 1956. "Detection of the Free Neutrino: a Confirmation". \textit{Science}, 124, 103.
+    Cowan C. L. \textit{et al.}, 1956. "Detection of the Free Neutrino: a Confirmation". \textit{Science}, 124, 103.
+    \bibitem{wu1957}
+    Wu C. S. \textit{et al.}, 1957. "Experimental Test of Parity Conservation in Beta Decay". \textit{Phys. Rev.}, 105, 1413.
+    \bibitem{salam1956}
+    Salam A., 1957. "On Parity Conservation and Neutrino Mass". \textit{Nuovo Cim.}, 5, 299.
+    \bibitem{landau1957}
+    Landau L., 1957. "On the Conservation Laws for Weak Interactions". \textit{Nucl. Phys.}, 3, 127.
+    \bibitem{leeyang1957}
+    Lee. T. D., Yang C. N., 1957. "Parity Nonconservation and a Two-Component Theory of the Neutrino". \textit{Phys. Rev.}, 105, 1671.
+    \bibitem{weyl1929}
+    Weyl H., 1929. "Elektron und Gravitation. I.". \textit{Z. Physik}, 56, 330.
+    \bibitem{garwinledermanweinrich1957}
+    Garwin R. L., Lederman L. M., Weinrich M., 1957. "Observations of the Failure of Conservation of Parity and Charge Conjugation in Meson Decays: the Magnetic Moment of the Free Muon". \textit{Phys. Rev.}, 105, 1415.
+    \bibitem{goldhabergrodzinssunyar1958}
+    Goldhaber M., Grodzins L., Sunyar A. W., 1958. "Helicity of Neutrinos". \textit{Phys. Rev.}, 109, 1015.
     
 \end{thebibliography}
 
