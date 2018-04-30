@@ -1,9 +1,16 @@
 \documentclass[english]{article}
+\usepackage{amstext}
+\usepackage{amssymb}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{slashed}
+\usepackage[normalem]{ulem}
+\usepackage[usenames,dvipsnames]{color}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -26,7 +33,7 @@ In this section
 \section{Neutrinos and the Standard Model}
 	Pauli first proposed the existence of neutrinos ("neutrons") in 1930 \cite{pauliletter1930} when he was looking at the problem of radioactive $\beta$-decay, in which the emitted electrons had a continuous spectrum of energies leading to contradiction with the principle of energy conservation. Pauli suggested that there must be another unseen particle, of spin $1/2$ and mass of the same order of magnitude as the electron mass, emitted along with the electron in order for energy to be conserved.
     
-    In 1934, Fermi used Pauli idea as the basis of his famous theory of $\beta$-decay and generally theory of weak interaction \cite{fermi1934}, coining the name "neutrino" ("little neutral one") in the process. Fermi was then able to calculate the probability of neutrino detection, which came out to be so small that it prompted Bethe and Peierls to claim that neutrinos might never be observed \cite{bethepeierls1934}. However, in 1956 Cowan and Reines succeeded in doing just that \cite{cowanreines1956} by their discovery of the antineutrinos in nuclear reactor using the reaction
+    In 1934, Fermi used Pauli idea as the basis of his famous theory of $\beta$-decay and generally theory of weak interaction \cite{fermi1934}, coining the name "neutrino" ("little neutral one") in the process. Fermi was then able to calculate the probability of neutrino detection, which came out to be so small that it prompted Bethe and Peierls to claim that neutrinos might never be observed \cite{bethepeierls1934}. However, in 1956 Cowan and Reines succeeded in doing just that \cite{cowanreines1956} by their discovery of the antineutrinos in nuclear reactor using the inverse beta decay process
     \begin{gather}
     	\bar{\nu}+p \rightarrow n+e^{+}
     \end{gather}
@@ -105,10 +112,159 @@ framework of 3-flavour neutrino mixing in vacuum. In its simplest form it can be
     where $c_{ij}=\cos\theta_{ij}$, $s_{ij}=\sin\theta_{ij}$, the angles $\theta_{ij}=[0,\pi/2)$; $\delta=[0,2\pi]$ is the Dirac CP violation (CPV) phase; and $\alpha_{21}$, $\alpha_{31}$ are two Majorana CPV phases.
     
     The neutrino oscillation probabilities depend, in general, on the neutrino
-energy $E$, the source-detector distance $L$, the elements of $U$, and the mass squared differences $\Delta{m_{ij}^{2}}=m_i^{2}-m_j^{2}$, $i \neq j$. In the 3-neutrino mixing framework, there are only two independent mass squared differences, say $\Delta{m_{21}^{2}} \neq 0$ and $\Delta{m_{31}^{2}} \neq 0$. The numbering system is arbitrary, although it proves convenient to identify $|\Delta{m_{21}^{2}}|$ with the smaller of the two neutrino mass squared differences. We also adapt the convention that $m_{1}<m_{2}$, so that $\Delta{m_{21}^{2}}>0$. The sign of $\Delta{m_{31}^{2}}$ is not yet determined. With these choices, if $\Delta{m_{31}^{2}}>0$ ($\Delta{m_{31}^{2}}<0$) the scheme is called normal (inverted) ordering or normal (inverted) mass spectrum.
+energy $E$, the source-detector distance $L$, the elements of $U$, and the mass squared differences $\Delta{m_{ij}^{2}}=m_i^{2}-m_j^{2}$, $i \neq j$. In the 3-neutrino mixing framework, there are only two independent mass squared differences, say $\Delta{m_{21}^{2}} \neq 0$ and $\Delta{m_{31}^{2}} \neq 0$. The numbering system is arbitrary, although it proves convenient to identify $|\Delta{m_{21}^{2}}|$ with the smaller of the two neutrino mass squared differences. We also adapt the convention that $m_{1}<m_{2}$, so that $\Delta{m_{21}^{2}}>0$. The sign of $\Delta{m_{31}^{2}}$ is not yet determined. With these choices, if $\Delta{m_{31}^{2}}>0$ ($\Delta{m_{31}^{2}}<0$) the scheme is called normal (inverted) ordering NO (IO).
 
 \section{Current Status}
-	Most recent global neutrino fits within the standard 3-neutrino mixing framework can be found in \cite{esteban2017} \cite{capozzi2017} \cite{salas2018}. Here, the results of the most current fit \cite{salas2018} will be the main focus.
+	Most recent global neutrino fits within the standard 3-neutrino mixing framework can be found in \cite{esteban2017} \cite{capozzi2017} \cite{salas2018}. Here, the results of the most current fit \cite{salas2018} will be the main focus. Different past and present experiments contributing to the global neutrino analysis will be discussed, grouped in the accelerator, reactor, solar, and atmospheric sectors, followed by the results of the global analyses of neutrino oscillations data.
+
+\subsection{Accelerator neutrino experiments}
+
+	For experiments using accelerator neutrinos as the source, "long-baseline"
+means that $E/L \simeq \Delta{m^{2}} \simeq 2.5 \times 10^{-3} eV^{2}$. The goals of the first long-baseline accelerator experiments proposed in the nineties, K2K \cite{k2k}, MINOS \cite{minos}, and CERN to Gran Sasso (CNGS) experiments OPERA \cite{opera} and ICARUS \cite{icarus} were to clarify the origin of the anomaly observed in the atmospheric neutrino measurements of Kamiokande \cite{kamiokande} and IMB \cite{imb} and later to confirm the discovery of neutrino oscillations by Super-Kamiokande in 1998 \cite{superk}. Soon afterwards, the CHOOZ experiment \cite{chooz} excluded the possibility that muon to electron neutrino oscillation is the dominant channel. Therefore, the goal of the first generation experiments was focused on confirming muon to tau neutrino oscillation. With the goal to discover electron neutrino appearance and determine $\theta_{13}$, T2K \cite{t2k} and NO$\nu$A \cite{nova}, successors of K2K and MINOS, are still at work today.
+	
+    The allowed ranges for the atmospheric parameters from the joint analysis of all MINOS data \cite{minosdata} are the following\\
+    
+    $\sin{\theta_{23}}^{2} \in [0.35, 0.65]$ (90\% C.L), $|\Delta{m_{32}^{2}}| \in |2.28, 2.46| \times 10^{-3} eV^{2}$ (1$\sigma$) (NO)
+    
+    $\sin{\theta_{23}}^{2} \in [0.34, 0.67]$ (90\% C.L), $|\Delta{m_{32}^{2}}| \in |2.32, 2.53| \times 10^{-3} eV^{2}$ (1$\sigma$) (IO)\\
+    
+   The combined analysis of the neutrino and antineutrino appearance and disappearance searches in T2K results in the best determination of the parameters to date \cite{t2kdata}\\
+   
+   $\sin^{2}{\theta_{23}} = 0.532$, $|\Delta{m_{32}^{2}}| = 2.545 \times 10^{-3} eV^{2}$ (NO)
+    
+    $\sin^{2}{\theta_{23}} = 0.534$, $|\Delta{m_{32}^{2}}| = 2.510 \times 10^{-3} eV^{2}$ (IO)\\
+    
+    Figure~\ref{fig:LBL-exp} shows the 90\% and 99\% C.L. allowed region in the atmospheric neutrino oscillation parameters $\sin^{2}{\theta_{23}}$ and $\Delta{m^{2}_{31}}$ according to the MINOS, T2K, and NO$\nu$A data for both mass ordering. The agreement among the three experiments is quite good.
+    
+    \begin{figure}[!hbt]
+		\begin{center}
+        \centering
+        \captionsetup{justification=centering}
+		\includegraphics[scale=0.5]{LBL-exp.pdf}
+		\caption{90 and 99\% C.L. allowed regions at the $\sin^{2}{\theta_{23}}$-$\Delta{m^{2}_{31}}$ plane for NO (left) and IO (right) as restricted from the long–baseline experiments. Figures adapted from \cite{salas2018}.}
+		\label{fig:LBL-exp}
+		\end{center}
+	\end{figure}
+
+\subsection{Reactor neutrino experiments and $\sin^{2}{2\theta_{13}}$}
+	
+    Nuclear reactors are prolific sources of $\bar{\nu}_{e}$ with energy near 4 MeV. The oscillation probability can be expressed as
+    \begin{gather}
+    	P(\bar{\nu}_{e} \rightarrow \bar{\nu}_{e}) = 1-\cos^{4}{\theta_{13}} \sin^{2}{2\theta_{12}} \sin^{2}{\Delta{m^{2}_{21} L/4E}}\notag \\
+        -\cos^{2}{\theta_{12}} \sin^{2}{2\theta_{13}} \sin^{2}{\Delta{m^{2}_{31} L/4E}}\notag \\
+        -\sin^{2}{\theta_{12}} \sin^{2}{2\theta_{13}} \sin^{2}{\Delta{m^{2}_{32} L/4E}}
+    \end{gather}
+    
+    For short-baseline reactor experiment $L<5$ km we can impose the approximation $\Delta{m^{2}_{32}} \simeq \Delta{m^{2}_{31}}$. The oscillation probability now has the familiar 2-neutrino form with $\theta_{13}$ and $\Delta{m^{2}_{32}}$
+    \begin{gather}
+    	P(\bar{\nu}_{e} \rightarrow \bar{\nu}_{e}) = 1-\sin^{2}{2\theta_{13}} \sin^{2}{\Delta{m^{2}_{32} L/4E}}
+    \end{gather}
+    
+    The Daya Bay reactor experiment \cite{dayabay} in China release their latest data reporting the detection of more than 2.5 millions of reactor antineutrino events, after 1230 days of taking data \cite{dayabaydata}. This enormous sample together with a significant reduction of systematical errors gives the most precise determination of the reactor mixing angle to date\\
+    
+    $\sin^{2}{2\theta_{13}} = 0.0841 \pm 0.0027$ (stat.) $\pm 0.0019$ (syst.)\\
+    
+    The RENO experiment \cite{reno} in South Korea recently reported their data of 500-day observation of the reactor neutrino spectrum \cite{renodata}. Their result is consistent with that of the Daya Bay collaboration\\
+    
+    $\sin^{2}{2\theta_{13}} = 0.082 \pm 0.009$ (stat.) $\pm 0.006$ (syst.)\\
+    
+    The latest results from the Double Chooz experiment in France consist of a period of 818 days of data at the far detector and 258 days of data at the near detector. Their best fit result is \cite{doublechoozdata}\\
+    
+    $\sin^{2}{2\theta_{13}} = 0.119 \pm 0.016$ (stat.$+$syst.)\\
+    
+    Figure~\ref{fig:sq13-mq31-reactor} shows the 90\% and 99\% C.L. allowed region in the neutrino oscillation parameters $\sin^{2}{\theta_{13}}$ and $\Delta{m^{2}_{31}}$ according to the Daya Bay, RENO, and Double Chooz data for both mass ordering.
+    
+    \begin{figure}[!hbt]
+		\begin{center}
+        \centering
+        \captionsetup{justification=centering}
+		\includegraphics[scale=0.5]{sq13-mq31-reactor.pdf}
+		\caption{90 and 99\% C.L. allowed regions at the $\sin^{2}{\theta_{13}}$-$\Delta{m^{2}_{31}}$ plane for NO (left) and IO (right) as restricted from the reactor experiments. Figures adapted from \cite{salas2018}.}
+		\label{fig:sq13-mq31-reactor}
+		\end{center}
+	\end{figure}
+
+\subsection{Solar neutrino sector and $\sin^{2}{\theta_{12}}$, $\Delta{m^{2}_{21}}$}
+	
+    Solar neutrino experiments are sensitive to $\nu_{e}$ disappearance and have allowed the measurement of $\theta_{12}$ and $\Delta{m^{2}_{21}}$. Solar neutrino analysis includes the historical experiments Homestake \cite{davis1968}, Gallex/GNO \cite{gallex1999}, SAGE \cite{sage1991}, and the more recent, real-time detection experiment Kamiokande \cite{kamiokande}, that confirmed the solar neutrino deficit observed by the previous experiments. Its successor Super-Kamiokande \cite{superk}, with a volume 10 times larger, has provided very precise observations in almost 20 years of operation.
+    
+    During its fourth, and also last phase, Super-Kamiokande has produced a $3\sigma$ indication of Earth matter effects in the solar neutrino flux by its measure of the day-night asymmetry \cite{superk2016} \cite{superk2016-2} \\
+    
+    $A_{DN} = \frac{\Phi_{D}-\Phi_{N}}{(\Phi_{D}+\Phi_{N})/2} = (-3.3\pm 1.0$ (stat.)$\pm 0.5$ (syst.)$)$ \% \\ \\
+    They have also managed to reconstruct a neutrino survival probability consistent with the MSW prediction at $1\sigma$ \cite{oscmatter} \cite{oscmatter2}.
+    
+    KamLAND is a reactor neutrino experiment, in which neutrinos are observed through the inverse beta decay process described earlier. The most recent data sample released by KamLAND contains a total live time of 2135 days \cite{kamlanddata}. 
+    
+    Figure~\ref{fig:sol-sector-sq12-mq21} shows the 90\% and 99\% C.L. allowed region in the parameters $\sin^{2}{\theta_{12}}$ and $\Delta{m^{2}_{21}}$ from the analysis of all solar neutrino data (black lines), from KamLAND data alone (blue lines), and from the combined of both (coloured regions). The best fit result for the global analysis is\\
+    
+    $\sin^{2}{\theta_{12}} = 0.321^{+0.018}_{-0.016}$ (stat.$+$syst.), 
+    $\Delta{m_{21}^{2}} = 7.56\pm 0.19 \times 10^{-5} eV^{2}$\\
+    
+    \begin{figure}[!hbt]
+		\begin{center}
+        \centering
+        \captionsetup{justification=centering}
+		\includegraphics[scale=0.5]{sol-sector-sq12-mq21.pdf}
+		\caption{90 and 99\% C.L. allowed regions at the $\sin^{2}{\theta_{13}}$-$\Delta{m^{2}_{31}}$ plane from the analysis of solar neutrino data (black), KamLAND data (blue), and global analysis (coloured regions). Figures adapted from \cite{salas2018}.}
+		\label{fig:sol-sector-sq12-mq21}
+		\end{center}
+	\end{figure}
+
+\subsection{Atmospheric neutrino sector and $\sin^{2}{\theta_{23}}$, $\Delta{m^{2}_{31}}$}
+
+\subsection{Global fit}
+
+	\begin{table}[!hbt]
+    \begin{center}
+    \centering
+    \captionsetup{justification=centering}
+  \catcode`?=\active \def?{\hphantom{0}}
+   \begin{tabular}{lccc}
+    \hline
+    parameter & best fit $\pm$ $1\sigma$ &   \hphantom{x} 2$\sigma$ range  \hphantom{x} &  \hphantom{x} 3$\sigma$ range  \hphantom{x}
+    \\
+    \hline
+    $\Delta m^2_{21}\: [10^{-5} eV^{2}]$
+    & 7.55$^{+0.20}_{-0.16}$  & 7.20--7.94 & 7.05--8.14 \\[3mm] 
+    %%
+    $|\Delta m^2_{31}|\: [10^{-3} eV^{2}]$ (NO)
+    &  2.50$\pm$0.03 &  2.44--2.57 &  2.41--2.60\\
+     $|\Delta m^2_{31}|\: [10^{-3} eV^{2}]$ (IO)
+    &  2.42$^{+0.03}_{-0.04}$ &  2.34--2.47 &  2.31-2.51 \\[3mm]
+    %%
+    $\sin^2\theta_{12} / 10^{-1}$
+    & 3.20$^{+0.20}_{-0.16}$ & 2.89--3.59 & 2.73--3.79\\
+    $\theta_{12} /^\circ$ & 34.5$^{+1.2}_{-1.0}$ & 32.5--36.8 & 31.5--38.0 \\[3mm]
+    %%
+     $\sin^2\theta_{23} / 10^{-1}$ (NO)
+              &	5.47$^{+0.20}_{-0.30}$ & 4.67--5.83 & 4.45--5.99 \\
+     $\theta_{23} /^\circ$ &	47.7$^{+1.2}_{-1.7}$ &  43.1--49.8& 41.8--50.7\\ 
+     $\sin^2\theta_{23} / 10^{-1}$ (IO)
+              & 5.51$^{+0.18}_{-0.30}$ & 4.91--5.84 & 4.53--5.98\\
+     $\theta_{23} /^\circ$ & 47.9$^{+1.0}_{-1.7}$ & 44.5--48.9 & 42.3--50.7\\[3mm] 
+    %%
+    $\sin^2\theta_{13} / 10^{-2}$ (NO)
+    & 2.160$^{+0.083}_{-0.069}$ &  2.03--2.34 & 1.96--2.41 \\
+    $\theta_{13} /^\circ$    & 8.45$^{+0.16}_{-0.14}$ & 8.2--8.8 & 8.0--8.9 \\
+    $\sin^2\theta_{13} / 10^{-2}$ (IO)
+    & 2.220$^{+0.074}_{-0.076}$ & 2.07--2.36 & 1.99--2.44 \\
+    $\theta_{13} /^\circ$ & 8.53$^{+0.14}_{-0.15}$ & 8.3--8.8 &  8.1--9.0 \\[3mm]
+    %%
+   $\delta/\pi$ (NO)
+   	& 1.21$^{+0.21}_{-0.15}$ & 1.01--1.75 & 0.87--1.94 \\
+   $\delta/^\circ$	& 218$^{+38}_{-27}$ & 182--315 & 157--349\\
+    $\delta/\pi$ (IO)
+   	& 1.56$^{+0.13}_{-0.15}$ & 1.27--1.82 & 1.12--1.94 \\
+   $\delta/^\circ$	& 281$^{+23}_{-27}$ & 229--328 & 202--349\\
+       \hline
+     \end{tabular}
+     \caption{ \label{tab:sum-2018}
+        Neutrino oscillation parameters summary determined from the global analysis in \cite{salas2018}. The ranges for inverted ordering refer to the local minimum for this neutrino mass ordering.
+     }
+    \end{center}
+	\end{table}
+
+\section{Future Work}
     
 \begin{thebibliography}{99}
 
@@ -192,6 +348,49 @@ energy $E$, the source-detector distance $L$, the elements of $U$, and the mass 
     Capozzi F., Valentino E. D., Lisi E., Marrone A., Melchiorri A., Palazzo A., 2017. "Global constraints on absolute neutrino masses and their ordering". \textit{Phys. Rev.}, D95, 096014.
     \bibitem{salas2018}
     de Salas. P. F., Forero D. V., Ternes C. A., Tórtola M., Valle J. W. F., 2018. "Status of neutrino oscillations 2018: first hint for normal mass ordering and improved CP sensitivity". arXiv:1708.01186v2.
+    \bibitem{k2k}
+    \textit{K2K Collaboration}, 2006. "Measurement of Neutrino Oscillation by the K2K Experiment". \textit{Phys. Rev.}, D74, 072003.
+    \bibitem{minos}
+    \textit{MINOS Collaboration}, 1998. "The MINOS Detectors Technical Design Report".
+    \bibitem{opera}
+     Acquafredda R. \textit{et al}, 2009. "The OPERA experiment in the CERN to Gran Sasso neutrino beam". \textit{JINST} 4, 04018.
+    \bibitem{icarus}
+    \textit{ICARUS Collaboration}, 2001. "The ICARUS experiment, a second-generation proton decay experiment and neutrino observatory at the Gran Sasso Laboratory". arXiv:hep-ex/0103008.
+    \bibitem{kamiokande}
+    \textit{Kamiokande-II Collaboration}, 1988. "Experimental Study of the Atmospheric Neutrino Flux". \textit{Phys. Lett.}, B205, 416.
+    \bibitem{imb}
+    Haines T. \textit{et al.}, 1986. "Calculation of Atmospheric Neutrino Induced Backgrounds in a Nucleon Decay Search". \textit{Phys. Rev. Lett.} 57, 1986.
+    \bibitem{superk}
+    \textit{Super-Kamiokande Collaboration}, 1998. "Evidence for oscillation of atmospheric neutrinos". \textit{Phys. Rev. Lett.}, 81, 1562.
+    \bibitem{chooz}
+     \textit{CHOOZ Collaboration}, 2003. "Search for neutrino oscillations on a long baseline at the CHOOZ nuclear power station". \textit{Eur. Phys. Jour.}, C27, 331.
+    \bibitem{t2k}
+    \textit{T2K Collaboration}, 2011. "The T2K Experiment". \textit{Nucl. Instrum. Meth.}, A659, 106.
+    \bibitem{nova}
+    \textit{NO$\nu$A Collaboration}, 2007. "The NO$\nu$A Technical Design Report". \textit{FERMILAB-DESIGN-2007-01}.
+    \bibitem{minosdata}
+    \textit{MINOS Collaboration}, 2014. "Combined analysis of $\nu_{\mu}$ disappearance and $\nu_{\mu} \rightarrow \nu_{e}$ appearance in MINOS using
+accelerator and atmospheric neutrinos". \textit{Phys. Rev. Lett.}, 112, 191801.
+	\bibitem{t2kdata}
+    \textit{T2K Collaboration}, 2017. "Combined Analysis of Neutrino and Antineutrino Oscillations at T2K". \textit{Phys. Rev. Lett.}, 118, 151801.
+    \bibitem{dayabay}
+    \textit{Daya Bay Collaboration}, 2012. "Observation of electron-antineutrino disappearance at Daya Bay". \textit{Phys. Rev. Lett.} 108, 171803.
+    \bibitem{dayabaydata}
+    \textit{Daya Bay Collaboration}, 2016. "Measurement of electron antineutrino oscillation based on 1230 days of operation of the Daya Bay experiment". arXiv: 1610.04802.
+    \bibitem{reno}
+    \textit{RENO Collaboration}, 2012. "Observation of Reactor Electron Antineutrino Disappearance in the RENO Experiment". \textit{Phys. Rev. Lett.}, 108, 191802.
+    \bibitem{renodata}
+    \textit{RENO Collaboration}, 2017. "Spectral Measurement of the Electron Antineutrino Oscillation Amplitude and Frequency using 500 Live Days of RENO Data". arXiv:1610.04326.
+    \bibitem{doublechoozdata}
+    \textit{Double Chooz Collaboration}, 2017. "Multi-detector results from the Double Chooz experiment". \textit{Double Chooz Publication}.
+    \bibitem{superk2016-2}
+    \textit{Super-Kamiokande Collaboration}, 2016. "Solar neutrino results from Super-Kamiokande". \textit{Super-Kamiokande Publication}.
+    \bibitem{oscmatter}
+    Wolfenstein L., 1978. "Neutrino Oscillations in Matter". \textit{Phys. Rev.}, D17, 2369.
+    \bibitem{oscmatter2}
+    Mikheev S. P., Smirnov A. Y., 1985. "Resonance Amplication of Oscillations in Matter and Spectroscopy of Solar Neutrinos". \textit{Sov. Jour. Nucl. Phys.}, 42, 913.
+    \bibitem{kamlanddata}
+    \textit{KamLAND Collaboration}, 2011. "Constraints on $\theta_{13}$ from A Three-Flavor Oscillation Analysis of Reactor Antineutrinos at KamLAND". \textit{Phys. Rev.}, D83, 052002.
     
 \end{thebibliography}
 
